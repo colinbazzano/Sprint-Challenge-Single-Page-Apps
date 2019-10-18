@@ -1,6 +1,28 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'; 
+import styled from 'styled-components';
 import CharacterCard from './CharacterCard'
+
+const Title = styled.h2`
+  text-align: center;
+  color: maroon;
+  font-size: 2rem;
+`;
+
+const SearchForm = styled.div`
+  text-align: center;
+`;
+const SearchInput = styled.input`
+  width: 20%;
+  height: auto;
+  font-size: 1.2rem;
+`;
+
+const CardContainer = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+`;
+
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -34,10 +56,10 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-      <h2>Characters</h2>
-      <div className='character-search'>
+      <Title>Characters</Title>
+      <SearchForm className='character-search'>
         <form className='search'>
-          <input 
+          <SearchInput 
           type='text'
           onChange={handleChange}
           value={search}
@@ -46,7 +68,8 @@ export default function CharacterList() {
           autoComplete='off'
           />
         </form>
-      </div>
+      </SearchForm>
+      <CardContainer>
       {data.map(char => {
         return(
           <CharacterCard 
@@ -57,6 +80,7 @@ export default function CharacterList() {
           />
         );
       })}
+      </CardContainer>
     </section>
   );
 }

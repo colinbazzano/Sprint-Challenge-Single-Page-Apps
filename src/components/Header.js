@@ -5,8 +5,8 @@ export default function Header() {
   return (
       <header className="ui centered">
         <h1 className="ui center">Rick &amp; Morty Fan Page</h1>
-        <Link to={'/'}>Home</Link>
-        <Link to={'/characterlist'}>
+        <Link className='navLink' to={'/'}>Home</Link>
+        <Link className='navLink' to={'/characterlist'}>
           Characters
         </Link>
       </header>
