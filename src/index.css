@@ -57,6 +57,7 @@ header h1 {
   margin: 2% auto;
   padding: 1%;
   border: 1px solid black;
+  border-radius: .5rem;
   color: #007bff;
   display: flex;
   flex-direction: column;
